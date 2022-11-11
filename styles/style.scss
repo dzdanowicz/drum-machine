@@ -1,5 +1,8 @@
+*::selection {
+  background-color: transparent;
+}
+
 body {
-  margin: 0;
   background-color: #0d1117;
 }
 
@@ -44,5 +47,32 @@ body {
       font-family: Arial, Helvetica, sans-serif;
       color: white;
     }
+  }
+
+  .drum-pad:active {
+    filter: brightness(110%);
+  }
+}
+
+#volume-bar {
+  margin: 18px 0;
+
+  input {
+    -webkit-appearance: none;
+    appearance: none;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 55%;
+    height: 20px;
+    background-color: #acacac;
+  }
+  input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+    background-color: #292fd0;
   }
 }
