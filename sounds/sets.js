@@ -1,5 +1,5 @@
 const set = {
-  title: drum,
+  title: "drum",
   sounds: {
     q: "clap.mp3",
     w: "closed-hihat.mp3",
@@ -12,3 +12,5 @@ const set = {
     c: "snare.mp3",
   },
 };
+
+export { set };
