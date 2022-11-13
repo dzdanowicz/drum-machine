@@ -7,4 +7,12 @@ for (const [key, value] of Object.entries(set.sounds)) {
   $("#" + key)[0].src = value;
 }
 
-$(document).keypress(function (event) {});
+function active(element) {}
+
+$(document).keypress(function (event) {
+  keys.forEach((key) => {
+    if (event.which == key) {
+      active($(`div[data-num=${key}]`));
+    }
+  });
+});
