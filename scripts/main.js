@@ -8,6 +8,14 @@ for (const [key, value] of Object.entries(set.sounds)) {
 
 let pressedKeys = [];
 
+function active(element, key) {
+  pressedKeys.push(key);
+  $(element).css("filter", "brightness(140%)");
+  let $audio = $("#" + key)[0];
+  $audio.play();
+  $audio.currentTime = 0;
+}
+
 $(document).on("keyup", function (event) {
   const eventKey = event.key.toLowerCase();
   const isPressed = pressedKeys.map((e, i) => {
@@ -26,8 +34,7 @@ $(document).keypress(function (event) {
   if (pressedKeys.indexOf(eventKey) === -1) {
     keys.forEach((key) => {
       if (eventKey === key) {
-        $(`div[data-key=${key}]`).css("filter", "brightness(140%)");
-        pressedKeys.push(key);
+        active(`div[data-key=${key}]`, key);
       }
     });
   }
