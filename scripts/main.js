@@ -9,11 +9,16 @@ for (const i of Object.entries(set.sounds)) {
 let pressedKeys = [];
 
 function active(element, key) {
+  const $audio = $("#" + key)[0];
+  const $display = $("#display");
+
   pressedKeys.push(key);
   $(element).css("filter", "brightness(140%)");
-  let $audio = $("#" + key)[0];
+
   $audio.play();
   $audio.currentTime = 0;
+
+  $display.text(set.sounds[key].name);
 }
 
 $(document).on("keyup", function (event) {
