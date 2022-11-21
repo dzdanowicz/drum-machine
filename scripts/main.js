@@ -2,8 +2,8 @@ import { set } from "/sounds/sets.js";
 
 const keys = ["q", "w", "e", "a", "s", "d", "z", "x", "c"];
 
-for (const [key, value] of Object.entries(set.sounds)) {
-  $("#" + key)[0].src = value;
+for (const i of Object.entries(set.sounds)) {
+  $("#" + i[0])[0].src = i[1].path;
 }
 
 let pressedKeys = [];
