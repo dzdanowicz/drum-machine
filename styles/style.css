@@ -1,7 +1,10 @@
+@font-face {
+  font-family: "digital";
+  src: url(fonts/digital-7-italic.ttf);
+}
 *::-moz-selection {
   background-color: transparent;
 }
-
 *::selection {
   background-color: transparent;
 }
@@ -25,6 +28,11 @@ body {
   width: 50%;
   margin: 15px auto;
   background-color: #869783;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "digital";
+  font-size: 26px;
 }
 
 #drum-pad-container {

@@ -2,11 +2,24 @@ import { set } from "/sounds/sets.js";
 
 const keys = ["q", "w", "e", "a", "s", "d", "z", "x", "c"];
 
-for (const [key, value] of Object.entries(set.sounds)) {
-  $("#" + key)[0].src = value;
+for (const i of Object.entries(set.sounds)) {
+  $("#" + i[0])[0].src = i[1].path;
 }
 
 let pressedKeys = [];
+
+function active(element, key) {
+  const $audio = $("#" + key)[0];
+  const $display = $("#display");
+
+  pressedKeys.push(key);
+  $(element).css("filter", "brightness(140%)");
+
+  $audio.play();
+  $audio.currentTime = 0;
+
+  $display.text(set.sounds[key].name);
+}
 
 $(document).on("keyup", function (event) {
   const eventKey = event.key.toLowerCase();
@@ -26,8 +39,7 @@ $(document).keypress(function (event) {
   if (pressedKeys.indexOf(eventKey) === -1) {
     keys.forEach((key) => {
       if (eventKey === key) {
-        $(`div[data-key=${key}]`).css("filter", "brightness(140%)");
-        pressedKeys.push(key);
+        active(`div[data-key=${key}]`, key);
       }
     });
   }
