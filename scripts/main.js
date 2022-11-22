@@ -8,12 +8,12 @@ for (const i of Object.entries(set.sounds)) {
 
 let pressedKeys = [];
 
-function active(element, key) {
+function active(key) {
   const $audio = $("#" + key)[0];
   const $display = $("#display");
 
   pressedKeys.push(key);
-  $(element).css("filter", "brightness(140%)");
+  $(`div[data-key=${key}]`).css("filter", "brightness(140%)");
 
   $audio.play();
   $audio.currentTime = 0;
@@ -21,26 +21,38 @@ function active(element, key) {
   $display.text(set.sounds[key].name);
 }
 
-$(document).on("keyup", function (event) {
-  const eventKey = event.key.toLowerCase();
+function inactive(event) {
+  let key;
+  event.key != undefined
+    ? (key = event.key.toLowerCase())
+    : (key = event.data.key.toLowerCase());
   const isPressed = pressedKeys.map((e, i) => {
-    if (e === eventKey) {
+    if (e === key) {
       pressedKeys.splice(i, 1);
       return true;
     }
   });
   if (isPressed) {
-    $(`div[data-key=${eventKey}]`).css("filter", "brightness(100%)");
+    $(`div[data-key=${key}]`).css("filter", "brightness(100%)");
   }
-});
+}
+
+$(document).on("keyup", { test: this }, inactive);
 
 $(document).keypress(function (event) {
   const eventKey = event.key.toLowerCase();
   if (pressedKeys.indexOf(eventKey) === -1) {
     keys.forEach((key) => {
       if (eventKey === key) {
-        active(`div[data-key=${key}]`, key);
+        active(key);
       }
     });
   }
+});
+
+$(".drum-pad").on("mousedown", function (event) {
+  const $element = $(event.target);
+  const key = $element.attr("data-key");
+  active(key);
+  $element.one("mouseup", { key: key }, inactive);
 });
