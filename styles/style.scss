@@ -58,10 +58,10 @@ body {
       color: white;
     }
   }
+}
 
-  .drum-pad:active {
-    filter: brightness(110%);
-  }
+.active {
+  filter: brightness(140%);
 }
 
 #volume-bar {

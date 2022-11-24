@@ -13,7 +13,7 @@ function active(key) {
   const $display = $("#display");
 
   pressedKeys.push(key);
-  $(`div[data-key=${key}]`).css("filter", "brightness(140%)");
+  $(`div[data-key=${key}]`).addClass("active");
 
   $audio.play();
   $audio.currentTime = 0;
@@ -33,7 +33,7 @@ function inactive(event) {
     }
   });
   if (isPressed) {
-    $(`div[data-key=${key}]`).css("filter", "brightness(100%)");
+    $(`div[data-key=${key}]`).removeClass("active");
   }
 }
 
