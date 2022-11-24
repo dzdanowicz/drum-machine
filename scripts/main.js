@@ -6,11 +6,16 @@ for (const i of Object.entries(set.sounds)) {
   $("#" + i[0])[0].src = i[1].path;
 }
 
+const $display = $("#display");
+
+function display(text) {
+  $display.text(text);
+}
+
 let pressedKeys = [];
 
 function active(key) {
   const $audio = $("#" + key)[0];
-  const $display = $("#display");
 
   pressedKeys.push(key);
   $(`div[data-key=${key}]`).addClass("active");
@@ -18,7 +23,7 @@ function active(key) {
   $audio.play();
   $audio.currentTime = 0;
 
-  $display.text(set.sounds[key].name);
+  display(set.sounds[key].name);
 }
 
 function inactive(event) {
