@@ -77,6 +77,7 @@ body {
   width: 55%;
   height: 20px;
   background-color: #acacac;
+  outline: 0;
 }
 #volume-bar input::-webkit-slider-thumb {
   -webkit-appearance: none;
