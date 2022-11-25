@@ -18,9 +18,10 @@ let pressedKeys = [];
 
 function active(key) {
   const $audio = $("#" + key)[0];
+  const $pad = $(`div[data-key=${key}]`);
 
   pressedKeys.push(key);
-  $(`div[data-key=${key}]`).addClass("active");
+  $pad.addClass("active");
 
   $audio.play();
   $audio.currentTime = 0;
@@ -33,14 +34,17 @@ function inactive(event) {
   event.key != undefined
     ? (key = event.key.toLowerCase())
     : (key = event.data.key.toLowerCase());
+
   const isPressed = pressedKeys.map((e, i) => {
     if (e === key) {
       pressedKeys.splice(i, 1);
       return true;
     }
   });
+
   if (isPressed) {
-    $(`div[data-key=${key}]`).removeClass("active");
+    const $pad = $(`div[data-key=${key}]`);
+    $pad.removeClass("active");
   }
 }
 
