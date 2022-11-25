@@ -3,7 +3,9 @@ import { set } from "/sounds/sets.js";
 const keys = ["q", "w", "e", "a", "s", "d", "z", "x", "c"];
 
 for (const i of Object.entries(set.sounds)) {
-  $("#" + i[0])[0].src = i[1].path;
+  const audio = $("#" + i[0])[0];
+  audio.src = i[1].path;
+  audio.volume = 0.5;
 }
 
 const $display = $("#display");
@@ -60,4 +62,11 @@ $(".drum-pad").on("mousedown", function (event) {
   const key = $element.attr("data-key");
   active(key);
   $element.one("mouseup", { key: key }, inactive);
+});
+
+$("#volume-bar > input").change(function (event) {
+  const $audios = $(".drum-pad > audio");
+  const eventVolume = event.target.valueAsNumber;
+  $audios.each((i, e) => (e.volume = eventVolume / 100));
+  display(eventVolume);
 });
