@@ -72,5 +72,5 @@ $("#volume-bar > input").on("input", function (event) {
   const $audios = $(".drum-pad > audio");
   const eventVolume = event.target.valueAsNumber;
   $audios.each((i, e) => (e.volume = eventVolume / 100));
-  display(eventVolume);
+  display("Volume: " + eventVolume);
 });
