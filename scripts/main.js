@@ -1,8 +1,8 @@
-import { set } from "/sounds/sets.js";
+import { sets } from "/sounds/sets.js";
 
 const keys = ["q", "w", "e", "a", "s", "d", "z", "x", "c"];
 
-for (const i of Object.entries(set.sounds)) {
+for (const i of Object.entries(sets.sounds)) {
   const audio = $("#" + i[0])[0];
   audio.src = i[1].path;
   audio.volume = 0.5;
@@ -26,7 +26,7 @@ function active(key) {
   $audio.play();
   $audio.currentTime = 0;
 
-  display(set.sounds[key].name);
+  display(sets.sounds[key].name);
 }
 
 function inactive(event) {
