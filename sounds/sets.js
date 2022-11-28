@@ -57,7 +57,7 @@ const sets = [
       },
       a: {
         name: "C4",
-        path: "sounds/.mp3",
+        path: "sounds/c4.mp3",
       },
       s: {
         name: "D4",
