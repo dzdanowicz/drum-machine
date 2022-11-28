@@ -1,3 +1,16 @@
+html,
+body,
+div,
+p,
+audio {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
 @font-face {
   font-family: "digital";
   src: url(fonts/digital-7-italic.ttf);
@@ -10,7 +23,6 @@
 }
 
 body {
-  margin: 0;
   background-color: #0d1117;
 }
 
