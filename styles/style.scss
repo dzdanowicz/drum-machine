@@ -16,6 +16,12 @@ audio {
   src: url(fonts/digital-7-italic.ttf);
 }
 
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 *::selection {
   background-color: transparent;
 }
@@ -25,9 +31,7 @@ body {
 }
 
 #container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include center;
   height: 100vh;
 }
 
@@ -42,9 +46,7 @@ body {
   width: 50%;
   margin: 15px auto;
   background-color: #869783;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include center;
   font-family: "digital";
   font-size: 26px;
 }
@@ -113,9 +115,7 @@ body {
       background-color: #acacac;
       height: 24px;
       width: 24px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include center;
       font-family: monospace, sans-serif;
       font-size: 18px;
     }
