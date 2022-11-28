@@ -109,8 +109,13 @@ body {
   position: relative;
   left: 100px;
 }
+#sets .set {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 20px;
+}
 #sets .set div {
-  background-color: #acacac;
   height: 24px;
   width: 24px;
   display: flex;
@@ -118,4 +123,11 @@ body {
   align-items: center;
   font-family: monospace, sans-serif;
   font-size: 18px;
+  background-color: #acacac;
+}
+#sets .set p {
+  position: relative;
+  left: 15px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
 }/*# sourceMappingURL=style.css.map */

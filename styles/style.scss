@@ -112,13 +112,25 @@ body {
   left: 100px;
 
   .set {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 20px;
+
     div {
-      background-color: #acacac;
       height: 24px;
       width: 24px;
       @include center;
       font-family: monospace, sans-serif;
       font-size: 18px;
+      background-color: #acacac;
+    }
+
+    p {
+      position: relative;
+      left: 15px;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
     }
   }
 }
