@@ -48,7 +48,7 @@ function inactive(event) {
   }
 }
 
-$(document).on("keyup", { test: this }, inactive);
+$(document).on("keyup", inactive);
 
 $(document).keypress(function (event) {
   const eventKey = event.key.toLowerCase();
