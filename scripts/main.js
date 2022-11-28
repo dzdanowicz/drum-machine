@@ -81,3 +81,9 @@ $("#volume-bar > input").on("input", function (event) {
   $audios.each((i, e) => (e.volume = eventVolume / 100));
   display("Volume: " + eventVolume);
 });
+
+for (let i = 0; i < Object.entries(sets).length; i++) {
+  $("#sets").append(
+    `<div class="set"><div>${i + 1}</div><p>${sets[i].title}</p></div>`
+  );
+}
