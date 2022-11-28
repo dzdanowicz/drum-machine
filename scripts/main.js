@@ -2,11 +2,18 @@ import { sets } from "/sounds/sets.js";
 
 const keys = ["q", "w", "e", "a", "s", "d", "z", "x", "c"];
 
-for (const i of Object.entries(sets.sounds)) {
-  const audio = $("#" + i[0])[0];
-  audio.src = i[1].path;
-  audio.volume = 0.5;
+let currentSet;
+
+function loadSounds(soundsObj) {
+  currentSet = soundsObj;
+  for (const sound of Object.entries(soundsObj)) {
+    const audio = $("#" + sound[0])[0];
+    audio.src = sound[1].path;
+    audio.volume = 0.5;
+  }
 }
+
+loadSounds(sets[0].sounds);
 
 const $display = $("#display");
 
@@ -26,7 +33,7 @@ function active(key) {
   $audio.play();
   $audio.currentTime = 0;
 
-  display(sets.sounds[key].name);
+  display(currentSet[key].name);
 }
 
 function inactive(event) {
