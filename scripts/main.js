@@ -72,7 +72,7 @@ $(".drum-pad").on("mousedown", function (event) {
   const $element = $(event.currentTarget);
   const key = $element.attr("data-key");
   active(key);
-  $element.one("mouseup", { key: key }, inactive);
+  $(document).one("mouseup", { key: key }, inactive);
 });
 
 $("#volume-bar > input").on("input", function (event) {
