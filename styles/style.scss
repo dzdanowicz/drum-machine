@@ -11,6 +11,10 @@ audio {
   vertical-align: baseline;
 }
 
+* {
+  user-select: none;
+}
+
 @font-face {
   font-family: "digital";
   src: url(fonts/digital-7-italic.ttf);
@@ -20,10 +24,6 @@ audio {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-*::selection {
-  background-color: transparent;
 }
 
 body {

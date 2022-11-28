@@ -11,17 +11,17 @@ audio {
   vertical-align: baseline;
 }
 
+* {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
 @font-face {
   font-family: "digital";
   src: url(fonts/digital-7-italic.ttf);
 }
-*::-moz-selection {
-  background-color: transparent;
-}
-*::selection {
-  background-color: transparent;
-}
-
 body {
   background-color: #0d1117;
 }
