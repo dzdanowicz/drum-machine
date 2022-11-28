@@ -10,14 +10,18 @@
 }
 
 body {
+  margin: 0;
   background-color: #0d1117;
 }
 
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 #drum-machine {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 500px;
   background-color: #2c2c2c;
   border-radius: 15px;
@@ -86,4 +90,19 @@ body {
   width: 20px;
   cursor: pointer;
   background-color: #292fd0;
+}
+
+#sets {
+  position: relative;
+  left: 100px;
+}
+#sets .set div {
+  background-color: #acacac;
+  height: 24px;
+  width: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace, sans-serif;
+  font-size: 18px;
 }/*# sourceMappingURL=style.css.map */
