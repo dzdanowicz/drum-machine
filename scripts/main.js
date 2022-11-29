@@ -1,12 +1,19 @@
-import { set } from "/sounds/sets.js";
+import { sets } from "/sounds/sets.js";
 
 const keys = ["q", "w", "e", "a", "s", "d", "z", "x", "c"];
 
-for (const i of Object.entries(set.sounds)) {
-  const audio = $("#" + i[0])[0];
-  audio.src = i[1].path;
-  audio.volume = 0.5;
+let currentSet;
+
+function loadSounds(soundsObj) {
+  currentSet = soundsObj;
+  for (const sound of Object.entries(soundsObj)) {
+    const audio = $("#" + sound[0])[0];
+    audio.src = sound[1].path;
+    audio.volume = 0.5;
+  }
 }
+
+loadSounds(sets[0].sounds);
 
 const $display = $("#display");
 
@@ -21,12 +28,12 @@ function active(key) {
   const $pad = $(`div[data-key=${key}]`);
 
   pressedKeys.push(key);
-  $pad.addClass("active");
+  $pad.addClass("drum-pad-active");
 
   $audio.play();
   $audio.currentTime = 0;
 
-  display(set.sounds[key].name);
+  display(currentSet[key].name);
 }
 
 function inactive(event) {
@@ -44,11 +51,11 @@ function inactive(event) {
 
   if (isPressed) {
     const $pad = $(`div[data-key=${key}]`);
-    $pad.removeClass("active");
+    $pad.removeClass("drum-pad-active");
   }
 }
 
-$(document).on("keyup", { test: this }, inactive);
+$(document).on("keyup", inactive);
 
 $(document).keypress(function (event) {
   const eventKey = event.key.toLowerCase();
@@ -62,10 +69,10 @@ $(document).keypress(function (event) {
 });
 
 $(".drum-pad").on("mousedown", function (event) {
-  const $element = $(event.target);
+  const $element = $(event.currentTarget);
   const key = $element.attr("data-key");
   active(key);
-  $element.one("mouseup", { key: key }, inactive);
+  $(document).one("mouseup", { key: key }, inactive);
 });
 
 $("#volume-bar > input").on("input", function (event) {
@@ -73,4 +80,23 @@ $("#volume-bar > input").on("input", function (event) {
   const eventVolume = event.target.valueAsNumber;
   $audios.each((i, e) => (e.volume = eventVolume / 100));
   display("Volume: " + eventVolume);
+});
+
+for (let i = 0; i < Object.entries(sets).length; i++) {
+  $("#sets").append(
+    `<div class="set" data-index="${i}"><div>${i + 1}</div><p>${
+      sets[i].title
+    }</p></div>`
+  );
+}
+
+$(`div[data-index="0"] > div`).addClass("set-active");
+
+$(".set").on("click", function (event) {
+  const $element = $(event.currentTarget);
+  const $index = $element.attr("data-index");
+  loadSounds(sets[$index].sounds);
+  display(sets[$index].title);
+  $(".set-active").removeClass("set-active");
+  $(`div[data-index="${$index}"] > div`).addClass("set-active");
 });

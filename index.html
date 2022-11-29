@@ -28,49 +28,52 @@
     <script src="scripts/main.js" type="module"></script>
   </head>
   <body>
-    <div id="drum-machine">
-      <div id="display"></div>
-      <div id="drum-pad-container">
-        <div data-key="q" class="drum-pad">
-          <p>Q</p>
-          <audio src="" id="q"></audio>
+    <div id="container">
+      <div id="drum-machine">
+        <div id="display"></div>
+        <div id="drum-pad-container">
+          <div data-key="q" class="drum-pad">
+            <p>Q</p>
+            <audio src="" id="q"></audio>
+          </div>
+          <div data-key="w" class="drum-pad">
+            <p>W</p>
+            <audio src="" id="w"></audio>
+          </div>
+          <div data-key="e" class="drum-pad">
+            <p>E</p>
+            <audio src="" id="e"></audio>
+          </div>
+          <div data-key="a" class="drum-pad">
+            <p>A</p>
+            <audio src="" id="a"></audio>
+          </div>
+          <div data-key="s" class="drum-pad">
+            <p>S</p>
+            <audio src="" id="s"></audio>
+          </div>
+          <div data-key="d" class="drum-pad">
+            <p>D</p>
+            <audio src="" id="d"></audio>
+          </div>
+          <div data-key="z" class="drum-pad">
+            <p>Z</p>
+            <audio src="" id="z"></audio>
+          </div>
+          <div data-key="x" class="drum-pad">
+            <p>X</p>
+            <audio src="" id="x"></audio>
+          </div>
+          <div data-key="c" class="drum-pad">
+            <p>C</p>
+            <audio src="" id="c"></audio>
+          </div>
         </div>
-        <div data-key="w" class="drum-pad">
-          <p>W</p>
-          <audio src="" id="w"></audio>
-        </div>
-        <div data-key="e" class="drum-pad">
-          <p>E</p>
-          <audio src="" id="e"></audio>
-        </div>
-        <div data-key="a" class="drum-pad">
-          <p>A</p>
-          <audio src="" id="a"></audio>
-        </div>
-        <div data-key="s" class="drum-pad">
-          <p>S</p>
-          <audio src="" id="s"></audio>
-        </div>
-        <div data-key="d" class="drum-pad">
-          <p>D</p>
-          <audio src="" id="d"></audio>
-        </div>
-        <div data-key="z" class="drum-pad">
-          <p>Z</p>
-          <audio src="" id="z"></audio>
-        </div>
-        <div data-key="x" class="drum-pad">
-          <p>X</p>
-          <audio src="" id="x"></audio>
-        </div>
-        <div data-key="c" class="drum-pad">
-          <p>C</p>
-          <audio src="" id="c"></audio>
+        <div id="volume-bar">
+          <input type="range" min="0" max="100" />
         </div>
       </div>
-      <div id="volume-bar">
-        <input type="range" min="0" max="100" />
-      </div>
+      <div id="sets"></div>
     </div>
   </body>
 </html>
