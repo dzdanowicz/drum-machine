@@ -76,8 +76,7 @@ body {
   color: white;
   margin: 16px 0;
 }
-
-.active {
+#drum-pad-container .drum-pad-active {
   filter: brightness(140%);
 }
 
@@ -124,6 +123,9 @@ body {
   font-family: monospace, sans-serif;
   font-size: 18px;
   background-color: #acacac;
+}
+#sets .set .set-active {
+  background-color: yellow;
 }
 #sets .set p {
   position: relative;

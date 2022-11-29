@@ -77,10 +77,10 @@ body {
       margin: 16px 0;
     }
   }
-}
 
-.active {
-  filter: brightness(140%);
+  .drum-pad-active {
+    filter: brightness(140%);
+  }
 }
 
 #volume-bar {
@@ -124,6 +124,10 @@ body {
       font-family: monospace, sans-serif;
       font-size: 18px;
       background-color: #acacac;
+    }
+
+    .set-active {
+      background-color: yellow;
     }
 
     p {

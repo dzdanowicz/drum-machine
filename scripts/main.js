@@ -28,7 +28,7 @@ function active(key) {
   const $pad = $(`div[data-key=${key}]`);
 
   pressedKeys.push(key);
-  $pad.addClass("active");
+  $pad.addClass("drum-pad-active");
 
   $audio.play();
   $audio.currentTime = 0;
@@ -51,7 +51,7 @@ function inactive(event) {
 
   if (isPressed) {
     const $pad = $(`div[data-key=${key}]`);
-    $pad.removeClass("active");
+    $pad.removeClass("drum-pad-active");
   }
 }
 
@@ -84,6 +84,19 @@ $("#volume-bar > input").on("input", function (event) {
 
 for (let i = 0; i < Object.entries(sets).length; i++) {
   $("#sets").append(
-    `<div class="set"><div>${i + 1}</div><p>${sets[i].title}</p></div>`
+    `<div class="set" data-index="${i}"><div>${i + 1}</div><p>${
+      sets[i].title
+    }</p></div>`
   );
 }
+
+$(`div[data-index="0"] > div`).addClass("set-active");
+
+$(".set").on("click", function (event) {
+  const $element = $(event.currentTarget);
+  const $index = $element.attr("data-index");
+  loadSounds(sets[$index].sounds);
+  display(sets[$index].title);
+  $(".set-active").removeClass("set-active");
+  $(`div[data-index="${$index}"] > div`).addClass("set-active");
+});
