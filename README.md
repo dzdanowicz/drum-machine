@@ -12,39 +12,39 @@ Drum Machine allows you to play sounds with your keyboard or mouse. You can use 
   {
     title: "Name for your sound set",
     sounds: {
-      q: {
+      Q: {
         name: "Name for a sound on Q pad",
         path: "Path to a sound on Q pad",
       },
-      w: {
+      W: {
         name: "Name for a sound on W pad",
         path: "Path to a sound on W pad",
       },
-      e: {
+      E: {
         name: "Name for a sound on E pad",
         path: "Path to a sound on E pad",
       },
-      a: {
+      A: {
         name: "Name for a sound on A pad",
         path: "Path to a sound on A pad",
       },
-      s: {
+      S: {
         name: "Name for a sound on S pad",
         path: "Path to a sound on S pad",
       },
-      d: {
+      D: {
         name: "Name for a sound on D pad",
         path: "Path to a sound on D pad",
       },
-      z: {
+      Z: {
         name: "Name for a sound on Z pad",
         path: "Path to a sound on Z pad",
       },
-      x: {
+      X: {
         name: "Name for a sound on X pad",
         path: "Path to a sound on X pad",
       },
-      c: {
+      C: {
         name: "Name for a sound on C pad",
         path: "Path to a sound on C pad",
       },

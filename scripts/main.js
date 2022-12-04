@@ -1,6 +1,6 @@
 import { sets } from "/sounds/sets.js";
 
-const keys = ["q", "w", "e", "a", "s", "d", "z", "x", "c"];
+const keys = ["Q", "W", "E", "A", "S", "D", "Z", "X", "C"];
 
 let currentSet;
 
@@ -39,8 +39,8 @@ function active(key) {
 function inactive(event) {
   let key;
   event.key != undefined
-    ? (key = event.key.toLowerCase())
-    : (key = event.data.key.toLowerCase());
+    ? (key = event.key.toUpperCase())
+    : (key = event.data.key.toUpperCase());
 
   const isPressed = pressedKeys.map((e, i) => {
     if (e === key) {
@@ -58,7 +58,7 @@ function inactive(event) {
 $(document).on("keyup", inactive);
 
 $(document).keypress(function (event) {
-  const eventKey = event.key.toLowerCase();
+  const eventKey = event.key.toUpperCase();
   if (pressedKeys.indexOf(eventKey) === -1) {
     keys.forEach((key) => {
       if (eventKey === key) {

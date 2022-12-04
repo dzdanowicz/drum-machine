@@ -2,39 +2,39 @@ const sets = [
   {
     title: "Drum",
     sounds: {
-      q: {
+      Q: {
         name: "Clap",
         path: "sounds/drum/clap.mp3",
       },
-      w: {
+      W: {
         name: "Closed Hi-hat",
         path: "sounds/drum/closed-hihat.mp3",
       },
-      e: {
+      E: {
         name: "Open Hi-hat",
         path: "sounds/drum/open-hihat.mp3",
       },
-      a: {
+      A: {
         name: "Splash Cymbal",
         path: "sounds/drum/splash-cymbal.mp3",
       },
-      s: {
+      S: {
         name: "Ride Cymbal",
         path: "sounds/drum/ride-cymbal.mp3",
       },
-      d: {
+      D: {
         name: "Crash Cymbal",
         path: "sounds/drum/crash-cymbal.mp3",
       },
-      z: {
+      Z: {
         name: "Kick",
         path: "sounds/drum/kick.mp3",
       },
-      x: {
+      X: {
         name: "Tom",
         path: "sounds/drum/tom.mp3",
       },
-      c: {
+      C: {
         name: "Snare",
         path: "sounds/drum/snare.mp3",
       },
@@ -43,39 +43,39 @@ const sets = [
   {
     title: "Piano",
     sounds: {
-      q: {
+      Q: {
         name: "A4",
         path: "sounds/piano/a4.mp3",
       },
-      w: {
+      W: {
         name: "A-4",
         path: "sounds/piano/a-4.mp3",
       },
-      e: {
+      E: {
         name: "B4",
         path: "sounds/piano/b4.mp3",
       },
-      a: {
+      A: {
         name: "C4",
         path: "sounds/piano/c4.mp3",
       },
-      s: {
+      S: {
         name: "D4",
         path: "sounds/piano/d4.mp3",
       },
-      d: {
+      D: {
         name: "E4",
         path: "sounds/piano/e4.mp3",
       },
-      z: {
+      Z: {
         name: "F4",
         path: "sounds/piano/f4.mp3",
       },
-      x: {
+      X: {
         name: "G4",
         path: "sounds/piano/g4.mp3",
       },
-      c: {
+      C: {
         name: "G-4",
         path: "sounds/piano/g-4.mp3",
       },
