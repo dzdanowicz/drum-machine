@@ -76,7 +76,7 @@ $(".drum-pad").on("mousedown", function (event) {
 });
 
 $("#volume-bar > input").on("input", function (event) {
-  const $audios = $(".drum-pad > audio");
+  const $audios = $(".clip");
   const eventVolume = event.target.valueAsNumber;
   $audios.each((i, e) => (e.volume = eventVolume / 100));
   display("Volume: " + eventVolume);
